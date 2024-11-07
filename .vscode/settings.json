@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 80,
+  "[typst]": {
+    "editor.defaultFormatter": "myriad-dreamin.tinymist"
+  }
+}
