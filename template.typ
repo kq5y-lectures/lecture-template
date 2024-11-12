@@ -1,14 +1,17 @@
-#import "@preview/metro:0.1.0": *
+#import "@preview/metro:0.3.0": *
 #import "@preview/tenv:0.1.1": parse_dotenv
+#import "@preview/codelst:2.0.2": sourcecode, sourcefile
 
 #let env = parse_dotenv(read(".env"))
 
 #let report(body) = {
   let serif = (
     "Times New Roman",
+    "Noto Serif",
     "Noto Serif CJK JP",
   )
   let sans = (
+    "Noto Sans",
     "Noto Sans CJK JP"
   )
   set text(
@@ -40,6 +43,42 @@
 
   show "、": "，"
   show "。": "．"
+
+  body
+
+}
+
+#let reportCover(
+  title: "",
+  subtitle: "",
+  lecture-name: "",
+  author-id: "",
+  author-affiliation: "",
+  author-name: "",
+  body
+) = {
+  align(right, text()[
+    #text[提出日: ]#datetime.today().display("[year]年[month]月[day]日")
+  ])
+  v(150pt)
+  align(center, text(16pt)[
+    #lecture-name
+  ])
+  align(center, text(24pt)[
+    *#title*
+  ])
+  v(1fr)
+  align(right)[
+    #table(
+      columns:(auto, auto),
+      align: (right, left),
+      stroke: none,
+      [学籍番号],[#author-id],
+      [所属],[#author-affiliation],
+      [氏名],[#author-name]
+    )
+  ]
+  pagebreak()
 
   body
 
