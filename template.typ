@@ -49,6 +49,18 @@
 
 }
 
+#let reportTop(
+  title: "",
+  submit-date: "",
+  body
+) = {
+  align(right, [提出日: #submit-date])
+  align(right, [#env.AUTHOR_ID #env.AUTHOR_NAME])
+  align(left, text(15pt)[#title])
+  v(15pt)
+  body
+}
+
 #let reportCover(
   title: "",
   subtitle: "",
