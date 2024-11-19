@@ -40,6 +40,7 @@
     v(-1em)
     box()
   }
+  show math.equation: set text(font: ("New Computer Modern Math",) + serif, lang: "ja")
 
   show "、": "，"
   show "。": "．"
