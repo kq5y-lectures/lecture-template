@@ -12,19 +12,21 @@
   )
   let sans = (
     "Noto Sans",
-    "Noto Sans CJK JP"
+    "Noto Sans CJK JP",
   )
   set text(
     11pt,
     font: serif,
     lang: "ja",
-    region: "JP"
+    region: "JP",
   )
   set page(
     paper: "a4",
     margin: (
-      bottom: 1.75cm, top: 2.5cm,
-      left: 2.5cm, right: 2.5cm
+      bottom: 1.75cm,
+      top: 2.5cm,
+      left: 2.5cm,
+      right: 2.5cm,
     ),
   )
   set par(
@@ -46,13 +48,12 @@
   show "。": "．"
 
   body
-
 }
 
 #let reportTop(
   title: "",
   submit-date: "",
-  body
+  body,
 ) = {
   align(right, [提出日: #submit-date])
   align(right, [#env.AUTHOR_ID #env.AUTHOR_NAME])
@@ -68,31 +69,39 @@
   author-id: "",
   author-affiliation: "",
   author-name: "",
-  body
+  body,
 ) = {
-  align(right, text()[
-    #text[提出日: ]#datetime.today().display("[year]年[month]月[day]日")
-  ])
+  align(
+    right,
+    text()[
+      #text[提出日: ]#datetime.today().display("[year]年[month]月[day]日")
+    ],
+  )
   v(150pt)
-  align(center, text(16pt)[
-    #lecture-name
-  ])
-  align(center, text(24pt)[
-    *#title*
-  ])
+  align(
+    center,
+    text(16pt)[
+      #lecture-name
+    ],
+  )
+  align(
+    center,
+    text(24pt)[
+      *#title*
+    ],
+  )
   v(1fr)
   align(right)[
     #table(
-      columns:(auto, auto),
+      columns: (auto, auto),
       align: (right, left),
       stroke: none,
-      [学籍番号],[#author-id],
-      [所属],[#author-affiliation],
-      [氏名],[#author-name]
+      [学籍番号], [#author-id],
+      [所属], [#author-affiliation],
+      [氏名], [#author-name],
     )
   ]
   pagebreak()
 
   body
-
 }
