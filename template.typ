@@ -41,7 +41,18 @@
     v(-1em)
     box()
   }
+
   show math.equation: set text(font: ("New Computer Modern Math",) + serif, lang: "ja")
+  show math.equation.where(block: true): e => [
+    #box(
+      width: 100%,
+      inset: 0em,
+      [
+        #set align(center)
+        #e
+      ],
+    )
+  ]
 
   show "、": "，"
   show "。": "．"
