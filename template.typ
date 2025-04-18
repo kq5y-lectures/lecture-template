@@ -1,4 +1,3 @@
-#import "@preview/metro:0.3.0": *
 #import "@preview/tenv:0.1.1": parse_dotenv
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile
 
@@ -55,8 +54,14 @@
   submit-date: "",
   body,
 ) = {
-  align(right, [提出日: #submit-date])
-  align(right, [#env.AUTHOR_ID #env.AUTHOR_NAME])
+  align(
+    right,
+    [
+      提出日: #submit-date\
+      学籍番号: #env.AUTHOR_ID\
+      #env.AUTHOR_AFFILIATION　#env.AUTHOR_NAME
+    ],
+  )
   align(left, text(15pt)[#title])
   v(15pt)
   body
