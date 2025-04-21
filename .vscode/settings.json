@@ -9,5 +9,8 @@
     "editor.formatOnSave": true
   },
   "tinymist.formatterMode": "typstyle",
-  "tinymist.formatterPrintWidth": 120
+  "tinymist.formatterPrintWidth": 120,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  }
 }
