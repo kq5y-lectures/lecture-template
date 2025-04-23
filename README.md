@@ -1,6 +1,6 @@
 # lecture-template
 
-Repository for lectures at Shinshu University
+Repository for lectures at University of Tsukuba
 
 <table>
   <tr>
@@ -14,7 +14,7 @@ Repository for lectures at Shinshu University
   <tr>
     <td>Syllabus</td>
     <td>
-      <a href="https://campus-3.shinshu-u.ac.jp/syllabusj/Display?NENDO=2024&BUKYOKU=T&CODE=[LectureCode]">
+      <a href="https://kdb.tsukuba.ac.jp/syllabi/2025/[LectureCode]/jpn">
         Link
       </a>
     </td>
