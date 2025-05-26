@@ -6,11 +6,9 @@
 #let report(body) = {
   let serif = (
     "Times New Roman",
-    "Noto Serif",
     "Noto Serif CJK JP",
   )
   let sans = (
-    "Noto Sans",
     "Noto Sans CJK JP",
   )
   set text(
@@ -29,7 +27,7 @@
     ),
   )
   set par(
-    first-line-indent: 1em,
+    first-line-indent: (amount: 1em, all: true),
     justify: true,
     leading: 1em,
   )
@@ -82,9 +80,6 @@
   title: "",
   subtitle: "",
   lecture-name: "",
-  author-id: "",
-  author-affiliation: "",
-  author-name: "",
   body,
 ) = {
   align(
@@ -112,9 +107,9 @@
       columns: (auto, auto),
       align: (right, left),
       stroke: none,
-      [学籍番号], [#author-id],
-      [所属], [#author-affiliation],
-      [氏名], [#author-name],
+      [学籍番号], [#env.AUTHOR_ID],
+      [所属], [#env.AUTHOR_AFFILIATION],
+      [氏名], [#env.AUTHOR_NAME],
     )
   ]
   pagebreak()
